@@ -1,0 +1,85 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-03 21:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the template
+msgctxt "Inicio"
+msgid "Home Page"
+msgstr ""
+
+#: front-page-slider.php:135
+msgctxt "Booking"
+msgid "Reservar"
+msgstr ""
+
+#: header.php:73
+msgctxt "Booking"
+msgid "RESERVAR"
+msgstr ""
+
+#. Name of the template
+msgctxt "Todas las Experiencias"
+msgid "All Experience"
+msgstr ""
+
+#. Name of the template
+#. Name of the template
+msgctxt "Página de Reservas"
+msgid "Reservation Page"
+msgstr ""
+
+#: awebooking/content-single-room-type.php:101
+msgid "FACILIDADES"
+msgstr ""
+
+#: include/form-comments.php:346
+msgid "Tu testimonio esta esperando aprobación"
+msgstr ""
+
+#: include/form-comments.php:349
+msgid "Dejanos tu testimonio"
+msgstr ""
+
+#: include/theme.php:22
+msgid "Footer"
+msgstr ""
+
+#: opalhotel/search/form-check-available.php:130
+msgctxt "Search..."
+msgid "Buscando..."
+msgstr ""
+
+#. Name of the theme
+msgid "Havana Lodge"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"A demo theme built to accompany the Treehouse blog post <a href=\"http:"
+"//teamtreehouse.com/wordpress-bootstrap-theme-tutorial\">How to Build a "
+"WordPress Theme with Bootstrap</a>."
+msgstr ""
+
+#. URI of the theme
+msgid "http://hl.dev"
+msgstr ""
+
+#. Author of the theme
+msgid "Ernesto"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://teamtreehouse.com/"
+msgstr ""

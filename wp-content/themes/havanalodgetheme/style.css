@@ -1,0 +1,207 @@
+/*
+Theme Name: Havana Lodge
+Theme URI: http://hl.dev
+Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
+Author: Ernesto
+Author URI: http://teamtreehouse.com/
+Version: 1.0
+Tags: responsive, white, bootstrap
+Text Domain: hl
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+
+@import url('assets/poput/component.css');
+@import url('assets/bootstrap-material-design-font/css/material.css');
+@import url('assets/et-line-font-plugin/style.css');
+@import url('assets/web/assets/mobirise-icons/mobirise-icons.css');
+@import url('assets/tether/tether.min.css');
+@import url('assets/bootstrap/css/bootstrap.min.css');
+@import url('assets/dropdown/css/style.css');
+@import url('assets/animate.css/animate.min.css');
+@import url('assets/theme/css/style.css');
+@import url('assets/mobirise-gallery/style.css');
+@import url('assets/mobirise/css/mbr-additional.css');
+@import url('assets/comment-form/frontend-style.css');
+
+a {
+    color: #2b2d2b;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #303030;
+    text-decoration: underline;
+}
+/* Custom Horizontal Form Booking */
+#content2-8{
+    padding: 0;
+    margin-top: -150px;
+    margin-bottom: 67px;
+}
+
+.lead.horizontal-form{
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0px 0px 94px #000 inset;
+}
+.horizontal-form .opalhotel_form_section {
+    background-color: transparent;
+    padding: 5px 0;
+}
+.horizontal-form .opalhotel_form_section .opalhotel-form-field {
+    padding: 5px 2%;
+    float: left;
+    padding-bottom: 18px;
+}
+.horizontal-form .opalhotel_form_section .opalhotel-form-field .opalhotel-form-lable {
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.horizontal-form .opalhotel_form_section .opalhotel-form-field .opalhotel-form-field-group input,
+.horizontal-form .opalhotel_form_section .opalhotel-form-field .opalhotel-form-field-group select {
+    background-color: rgba(255,255,255,0.8);
+    padding: 0 18px 0 12px;
+    line-height: 50px;
+    height: 30px;
+    font-size: 14px;
+    color: #111;
+    border: none;
+    border-radius: 3px;
+}
+.horizontal-form .opalhotel_form_section .opalhotel-form-field .opalhotel-form-field-group i {
+    top: 7px;
+    right: 15px;
+}
+.horizontal-form .opalhotel_form_section footer {
+    padding: 0;
+    margin-top: 17px;
+    float: right;
+    padding-right: 2%;
+}
+.horizontal-form .opalhotel_form_section footer button{
+    text-transform: uppercase;
+}
+
+.currency-switcher{
+    width: 100%;
+    color: #696969;
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+@-webkit-keyframes flash{
+    0%,50%,to{
+        opacity:1
+    }
+    25%,75%{
+        opacity:0
+    }
+}
+@keyframes flash{
+    0%,50%,to{
+        opacity:1
+    }
+    25%,75%{
+        opacity:0
+    }
+}
+.flash{
+    -webkit-animation-name:flash;
+    animation-name:flash
+}
+
+.myanimated{
+    -webkit-animation-duration: 3s;
+    animation-duration:3s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-iteration-count:infinite;
+}
+.room__meta.room__meta--single{
+    color: #fff;
+}
+.room__meta.room__meta--single{
+    color: #fff;
+}
+.room__meta.room__meta--single .nav-item{
+
+}
+.room__meta.room__meta--single .nav-item a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+#menu-0 form.datepicker-form{
+    margin: 0;
+}
+#menu-0 form.datepicker-form input.button--datepicker{
+    margin: 0;
+    padding: 4px 20px;
+}
+#menu-0 .datepicker-input-select{
+    width: 45%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+#menu-0 .datepicker {
+    right: 0;
+}
+#booking-form p::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#booking-form p label {
+    display: inline-block;
+}
+#booking-form p input {
+    float: right;
+    display: inline-block;
+}
+.mbr-section-hero .datepicker-form{
+    margin-bottom: 1.2rem;
+}
+.mbr-section-hero .datepicker-form span.datepicker-input-select-wrapper{
+    display: block;
+    margin-top: 1rem;
+}
+.mbr-section-hero .datepicker-form span input{
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+}
+.mbr-section-hero .datepicker-form input[type="submit"]{
+
+}
+
+.mbr-section-hero .room__price-wrapper--single{
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.mbr-section-hero .room__price-wrapper--single .amount{
+    font-size: 2.5rem;
+}
+
+.room__meta-list {
+    width: 70%;
+    float: right;
+}
+.room__meta-list li{
+    font-size: 1rem;
+}
+.room__meta-list li strong{
+    margin-right: 11px;
+    float: left;
+}
+.room__meta-list li a{
+    color: #fff;
+}
