@@ -51,19 +51,41 @@
 			});
 		
 			if (ret) return;
-			
-			if ( '' == controls.$el[0].id ) {
-				var newID = $(p).attr('id');
+
+			var controlElementID = controls.$el[0].id;
+			if ( '' == controlElementID ) {
 				/**
 				 * We have empty controls.$el[0].id @since WP 4.8.1.
 				 * Fix it.
 				 */
 				var p = controls.$el[0].offsetParent;
-				controls.$el[0].id = $(p).attr('id');
+				controlElementID = $(p).attr('id');
+				if ( 'undefined' === typeof controlElementID ) {
+					/**
+					 * Case when WYSIWYG text widgets more than 1.
+					 * @since 1.8.6
+					 */
+					$('.widget').each( function(i,e){
+						var id = $(e).attr('id');
+						if( -1 != id.indexOf(widgetName) ) {
+							controlElementID = id;
+							return false;
+						}
+						
+					});
+				}
 			}
 			
-			var sourceSelector 		= '#'+controls.$el[0].id+' #widget-'+widgetName+'-text';
-			var sourceTitleSelector = '#'+controls.$el[0].id+' #widget-'+widgetName+'-title';
+			if ( 'undefined' === typeof controlElementID ) {
+				/**
+				 * For testing purposes.
+				 * Maybe there will be changes in next versions WP.
+				 */
+				// console.log('controlElementID: '+controlElementID); 
+			}
+			
+			var sourceSelector 		= '#'+controlElementID+' #widget-'+widgetName+'-text';
+			var sourceTitleSelector = '#'+controlElementID+' #widget-'+widgetName+'-title';
 
 			api.editor[editor.id] = {}; 
 			api.editor[editor.id]['widgetName'] 			= widgetName;
@@ -72,9 +94,9 @@
 			api.editor[editor.id]['titleSelector'] 			= null;
 			api.editor[editor.id]['sourceSelector'] 	 	= sourceSelector;
 			api.editor[editor.id]['content'] 			 	= $(sourceSelector).val(); 
-			api.editor[editor.id]['saveSelector']		 	= '#'+controls.$el[0].id+' #widget-'+widgetName+'-savewidget'; 
-			api.editor[editor.id]['languageSelector']	 	= '#'+controls.$el[0].id+' .wpglobus-current-language'; 
-			api.editor[editor.id]['inWidgetTitleSelector']	= '#'+controls.$el[0].id+' .in-widget-title'; 
+			api.editor[editor.id]['saveSelector']		 	= '#'+controlElementID+' #widget-'+widgetName+'-savewidget'; 
+			api.editor[editor.id]['languageSelector']	 	= '#'+controlElementID+' .wpglobus-current-language'; 
+			api.editor[editor.id]['inWidgetTitleSelector']	= '#'+controlElementID+' .in-widget-title'; 
 			 
 			/**
 			 * Set init value for tinymce editor via textarea field.
@@ -92,7 +114,7 @@
 				newItem = newItem.replace('{{language}}', 	l);
 				newItem = newItem.replace('{{item}}', 		WPGlobusCoreData.en_language_name[l]);
 				newItem = newItem.replace('{{widgetName}}', widgetName);
-				newItem = newItem.replace('{{widgetID}}',   controls.$el[0].id);
+				newItem = newItem.replace('{{widgetID}}',   controlElementID);
 				newItem = newItem.replace('{{editorID}}',   editor.id);
 				newItem = newItem.replace('{{source}}', 	sourceSelector);
 				items += newItem;
@@ -106,7 +128,7 @@
 					'style="z-index:200000;" ' +
 					'type="button" ' +
 					'id="'+editor.id+'-wpglobus-button" ' +
-					'data-widget-id="'+controls.$el[0].id+'"' +
+					'data-widget-id="'+controlElementID+'"' +
 					'class="wp-switch-editor switch-wpglobus-language wpglobus-icon-globe">' +
 					'<span class="wpglobus-current-language" data-language="en" style="">En</span>' +
 				'</button>' +
@@ -114,7 +136,7 @@
 					'<div style="display:flex;flex-direction:column;">' + items + '</div>' +
 				'</div>';
 			
-			$('#'+controls.$el[0].id+' .wp-editor-tabs').append(button);
+			$('#'+controlElementID+' .wp-editor-tabs').append(button);
 			
 			/**
 			 * Add WPGlobus dialog to title field.
@@ -268,23 +290,23 @@
 			}
 			
 		},		
-		addElements : function(get_by, coid) {
+		addElements: function(get_by, coid) {
 			var id, elem = [], get_by_coid;
 			elem[0] = 'input[type="text"]';
 			elem[1] = 'textarea';
 			if ( typeof get_by === 'undefined' || get_by == 'class' ) {
 				get_by_coid = '.widget-liquid-right .widget .widget-content';
 				$.each(elem, function(i,e){
-					api.make_clone(get_by_coid, e);
+					api.makeClone(get_by_coid, e);
 				});
 			} else if ( get_by == 'id' ) {
 				get_by_coid = '#'+coid+' .widget-content';
 				$.each(elem, function(i,e){
-					api.make_clone(get_by_coid, e);
+					api.makeClone(get_by_coid, e);
 				});	
 			}
 		},
-		make_clone: function(get_by_coid, type) {
+		makeClone: function(get_by_coid, type) {
 			$(get_by_coid+' '+type).each(function(i,e){
 				var element = $(e),
 					clone, name, text, id, dis = false;
@@ -396,8 +418,33 @@
 			$(document).on('click','.widget-title, .widget-title-action',function(ev){
 				ev.preventDefault();
 				api.wysiwygClean();
+				api.imageWidget(this);
 			});				
-		}	
+		},
+		imageWidget: function(title) {
+			var wID  = $(title).parents('.widget').attr('id');
+			if ( -1 == wID.indexOf('media_image') ) {
+				return;
+			}
+			var $title = $('#'+wID+' .in-widget-title');
+			var elID   = $('#'+wID).find('input[type="text"]').attr('id');
+			if ( -1 != elID.indexOf('.') ) {
+				var name = 'wpg-'+elID.replace('.','_');
+				$('#'+wID).find('input[type="text"]').attr('name',name);
+				if ( WPGlobusDialogApp.addElement(name) ) {
+					var $el = $('#'+wID).find('input[name="'+name+'"]');
+					var v = WPGlobusCore.getTranslations( $el.val() )[WPGlobusCoreData['language']];
+					$title.text(': '+v);
+					setTimeout(function(){$('#wpglobus-'+name).val(v)},1000);
+				}
+			} else {
+				if ( WPGlobusDialogApp.addElement(elID) ) {
+					var v = WPGlobusCore.getTranslations( $('#'+elID).val() )[WPGlobusCoreData['language']];
+					$title.text(': '+v);
+					setTimeout(function(){$('#wpglobus-'+elID).val(v)},1000);
+				}				
+			}				
+		}
 	};
 	
 	WPGlobusWidgets = $.extend({}, WPGlobusWidgets, api);

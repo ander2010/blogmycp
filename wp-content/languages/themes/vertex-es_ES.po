@@ -1,0 +1,194 @@
+# Translation of Themes - Vertex in Spanish (Spain)
+# This file is distributed under the same license as the Themes - Vertex package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-10-01 09:51:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: es\n"
+"Project-Id-Version: Themes - Vertex\n"
+
+#. Description of the plugin/theme
+msgid "Vertex responsive beautiful and simple theme mostly for portfolio websites or photography and blog sites. With clean and modern design and aesthetic feel,showcase your content in an contemporary timeless style. Make your images stand out and focus on your content."
+msgstr "Vertex es un tema adaptable, hermoso y simple; principalmente para sitios web de portfolio o fotografías o blogs. Con un diseño limpio y moderno y un enfoque estético, muestra tu contenido en un estilo contemporáneo y eterno. Haz que tus imágenes destaquen y que se centren en tu contenido."
+
+#. Theme Name of the plugin/theme
+msgid "Vertex"
+msgstr "Vertex"
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
+msgstr "Página de inicio"
+
+#: tpl-homepage.php:41
+msgid "Next"
+msgstr "Siguiente"
+
+#: tpl-homepage.php:40
+msgid "Previous"
+msgstr "Anterior"
+
+#: single.php:19
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: single.php:13
+msgid "Pages"
+msgstr "Páginas"
+
+#: searchform.php:5
+msgid "SEARCH"
+msgstr "BUSCAR"
+
+#: searchform.php:4
+msgid "Search"
+msgstr "Buscar"
+
+#: searchform.php:3
+msgid "Search for"
+msgstr "Buscar"
+
+#: search.php:53
+msgid "Try to search again."
+msgstr "Prueba a buscar de nuevo."
+
+#: search.php:35
+msgid "IN"
+msgstr "EN"
+
+#: search.php:8
+msgid "Search Results"
+msgstr "Resultados de la búsqueda"
+
+#: index.php:50
+msgid "Sorry, no blog posts found. Please create a post and assign it in \"blog\" category."
+msgstr "Lo sentimos, no se han encontrado entradas del blog. Por favor, crea un post y asígnale la categoría \"blog\"."
+
+#: search.php:52
+msgid "No results found"
+msgstr "No se han encontrado resultados"
+
+#: index.php:33 tpl-homepage.php:125
+msgid "Comments"
+msgstr "Comentarios"
+
+#: index.php:33 tpl-homepage.php:125
+msgid " 1 Comment"
+msgstr "1 comentario"
+
+#: index.php:33 tpl-homepage.php:125
+msgid "0 Comments"
+msgstr "0 comentarios"
+
+#: functions.php:121
+msgid "Powered by <a href=\"https://wordpress.org\" target=\"_blank\">WordPress</a>. Vertex created by <a href=\"http://dessign.net/\" target=\"_blank\">Dessign</a>"
+msgstr "Funciona gracias a <a href=\"https://wordpress.org\" target=\"_blank\">WordPress</a>. Vertex creado por <a href=\"http://dessign.net/\" target=\"_blank\">Dessign</a>"
+
+#: functions.php:121
+msgid "Y"
+msgstr "Y"
+
+#: functions.php:68
+msgid "No Sidebar"
+msgstr "Sin barra lateral"
+
+#: functions.php:14
+msgid "Header Menu"
+msgstr "Menú del enacabezado"
+
+#: customizer.php:76 customizer.php:96
+msgid "Copyright Text"
+msgstr "Texto del Copyright"
+
+#: customizer.php:49 customizer.php:78
+msgid "Allows you to set your footer settings"
+msgstr "Te permite establecer los ajustes de tu pié de página"
+
+#: customizer.php:47 customizer.php:67
+msgid "Featured Text"
+msgstr "Texto destacado"
+
+#: customizer.php:8
+msgid "Logo"
+msgstr "Logo"
+
+#: comments.php:42
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#: comments.php:20 comments.php:38
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios más recientes &rarr;"
+
+#: comments.php:19 comments.php:37
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios anteriores"
+
+#: customizer.php:10
+msgid "Allows you to edit your theme's layout."
+msgstr "Te permite editar el diseño de tu tema."
+
+#: customizer.php:19
+msgid "Allows you to set your social media URLs"
+msgstr "Te permite establecer las URLs de tus redes sociales"
+
+#: customizer.php:17
+msgid "Social Media"
+msgstr "Redes Sociales"
+
+#: comments.php:12
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un comentario en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commentarios en &ldquo;%2$s&rdquo;"
+
+#: 404.php:10
+msgid "It looks like nothing was found at this location. Maybe try a search"
+msgstr "Parece que no se encuentra nada en esa ubicación. Quizá prueba a buscar"
+
+#: 404.php:9
+msgid "This is somewhat embarrassing, isn't it?"
+msgstr "Esto es algo embarazoso, ¿no?"
+
+#: 404.php:8
+msgid "Page not Found"
+msgstr "Página no encontrada"
+
+#: comments.php:18 comments.php:36
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: functions.php:101
+msgid "Footer Col 4"
+msgstr "Pié de página Col 4"
+
+#: functions.php:92
+msgid "Footer Col 3"
+msgstr "Pié de página Col 3"
+
+#: functions.php:84
+msgid "Footer Col 2"
+msgstr "Pié de página Col 2"
+
+#: functions.php:76
+msgid "Footer Col 1"
+msgstr "Pié de página Col 1"
+
+#: customizer.php:37
+msgid "%s URL"
+msgstr "URL de %s"
+
+#. Author URI of the plugin/theme
+msgid "https://dessign.net"
+msgstr "https://dessign.net"
+
+#. Author of the plugin/theme
+msgid "DessignThemes"
+msgstr "DessignThemes"
+
+#. Theme URI of the plugin/theme
+msgid "https://dessign.net/vertex-theme/"
+msgstr "https://dessign.net/vertex-theme/"
